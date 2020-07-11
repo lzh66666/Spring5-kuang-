@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/context/spring-aop.xsd">
+
+   <!-- <bean id="cat" class="nuc.ss.pojo.Cat"/>
+    <bean id="dog" class="nuc.ss.pojo.Dog"/>-->
+
+    <!--1.-->
+    <!--<bean id="people" class="nuc.ss.pojo.People">
+        <property name="name" value="狂神"/>
+        <property name="cat" ref="cat"/>
+        <property name="dog" ref="dog"/>
+    </bean>-->
+
+    <!--2.
+    byName:会自动在容器上下文中套接，和自己对象的set方法后面的值相对应的beanid
+    byType:会自动在容器上下文中套接，和自己对象属性类型相同的beanid
+    -->
+    <!--<bean id="people" class="nuc.ss.pojo.People" autowire="byName">
+        <property name="name" value="狂神"/>
+    </bean>-->
+    <!--3.-->
+    <!--开启注解的支持，set方法不需要了-->
+    <context:annotation-config/>
+
+    <bean id="cat11" class="nuc.ss.pojo.Cat"/>
+    <bean id="cat1" class="nuc.ss.pojo.Cat"/>
+    <!--<bean id="dog" class="nuc.ss.pojo.Dog"/>-->
+    <bean id="dog222" class="nuc.ss.pojo.Dog"/>
+
+    <bean id="people" class="nuc.ss.pojo.People"/>
+</beans>

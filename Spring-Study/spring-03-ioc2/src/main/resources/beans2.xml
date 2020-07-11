@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--无参构造器-->
+    <!--<bean id="user" class="nuc.ss.pojo.User">
+        <property name="name" value="狂神"/>
+    </bean>-->
+
+    <!--有参构造器1，下标赋值-->
+    <!--<bean id="user" class="nuc.ss.pojo.User">
+        <constructor-arg index="0" value="狂神说Java"/>
+    </bean>-->
+
+    <!--有参构造器2，类型，但同类型只能一个，不建议使用-->
+    <!--<bean id="user" class="nuc.ss.pojo.User">
+        <constructor-arg type="java.lang.String" value="狂神"/>
+    </bean>-->
+
+    <!--有参构造器3，参数名-->
+    <bean id="user" class="nuc.ss.pojo.User">
+        <constructor-arg name="name" value="狂神"/>
+    </bean>
+
+    <!--别名，如果添加了别名也可以使用别名获取到这个对象-->
+    <alias name="user" alias="userNew"/>
+
+    <!--
+        id:bean的唯一标识符，也就是相当于我们学的对象名
+        class：bean 对象所对应的权限定名：包名 + 类型
+        name: 也是别名,而且name更高级，可以起多个别名，通过逗号空格分号等分割
+    -->
+    <bean id="userT" class="nuc.ss.pojo.UserT" name="userT2,t2">
+        <property name="name" value="西部开源2"/>
+    </bean>
+</beans>
